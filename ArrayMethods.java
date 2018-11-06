@@ -20,4 +20,17 @@ public class ArrayMethods {
     }
     return king;
   }
+  public static int[] allColSums(int[][] ary) {
+    int colLength = 0;
+    for(int i = 0; i < ary.length; i = i + 1) {
+      if (ary[i].length > colLength) {
+        colLength = ary[i].length;
+      }
+    }
+    int[] queen = new int[colLength];
+    for(int i = 0; i < colLength; i = i + 1) {
+      queen[i] = columnSum(ary, i);
+    }
+    return queen;
+  }
 }
