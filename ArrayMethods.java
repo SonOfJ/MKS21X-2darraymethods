@@ -37,6 +37,8 @@ public class ArrayMethods {
     }
     int[] queen = new int[colLength];
     for(int i = 0; i < colLength; i = i + 1) {
+      if (ary[i].length < colLength) {
+      }
       queen[i] = columnSum(ary, i);
     }
     return queen;
