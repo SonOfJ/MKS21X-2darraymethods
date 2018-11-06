@@ -13,4 +13,11 @@ public class ArrayMethods {
     }
     return sum;
   }
+  public static int[] allRowSums(int[][] ary) {
+    int[] king = new int[ary.length];
+    for(int i = 0; i < ary.length; i = i + 1) {
+      king[i] = rowSum(ary , i);
+    }
+    return king;
+  }
 }
