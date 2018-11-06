@@ -11,6 +11,11 @@ public class ArrayMethods {
   }
   public static int columnSum(int[][] ary, int x) {
     int sum = 0;
+    for(int i = 0; i < ary.length; i = i + 1) {
+      if (ary[i].length <= x) {
+        return 0;
+      }
+    }
     for(int i = 0; i < ary[i].length; i = i + 1) {
       sum = sum + ary[i][x];
     }
