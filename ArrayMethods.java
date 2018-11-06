@@ -12,12 +12,9 @@ public class ArrayMethods {
   public static int columnSum(int[][] ary, int x) {
     int sum = 0;
     for(int i = 0; i < ary.length; i = i + 1) {
-      if (ary[i].length <= x) {
-        return 0;
+      if (x < ary[i].length) {
+        sum = sum + ary[i][x];
       }
-    }
-    for(int i = 0; i < ary[i].length; i = i + 1) {
-      sum = sum + ary[i][x];
     }
     return sum;
   }
@@ -28,20 +25,18 @@ public class ArrayMethods {
     }
     return king;
   }
-  public static int colLength(int[][] ary) {
-    int colLength = 0;
+  public static int greatestIndex(int[][] ary) {
+    int index = 0;
     for(int i = 0; i < ary.length; i = i + 1) {
-      if (ary[i].length > colLength) {
-        colLength = ary[i].length;
+      if (ary[i].length > index) {
+        index = ary[i].length;
       }
     }
-    return colLength;
+    return index;
   }
   public static int[] allColSums(int[][] ary) {
-    int[] queen = new int[colLength(ary)];
-    for(int i = 0; i < colLength(ary); i = i + 1) {
-      if (ary[i].length < colLength(ary)) {
-      }
+    int[] queen = new int[ary.length];
+    for(int i = 0; i < ary.length; i = i + 1) {
       queen[i] = columnSum(ary, i);
     }
     return queen;
@@ -55,7 +50,7 @@ public class ArrayMethods {
     return true;
   }
   public static boolean isColumnMagic(int[][] ary) {
-    for(int i = 1; i < colLength(ary); i = i + 1) {
+    for(int i = 1; i < greatestIndex(ary); i = i + 1) {
       if (columnSum(ary, i ) != columnSum(ary, 0)) {
         return false;
       }
