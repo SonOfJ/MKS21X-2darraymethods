@@ -54,4 +54,12 @@ public class ArrayMethods {
     }
     return true;
   }
+  public static boolean isColumnMagic(int[][] ary) {
+    for(int i = 1; i < colLength(ary); i = i + 1) {
+      if (columnSum(ary, i ) != columnSum(ary, 0)) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
