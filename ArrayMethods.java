@@ -43,4 +43,12 @@ public class ArrayMethods {
     }
     return queen;
   }
+  public static boolean isRowMagic(int[][] ary) {
+    for(int i = 1; i < ary.length; i = i + 1) {
+      if (rowSum(ary, i) != rowSum(ary, 0)) {
+        return false;
+      }
+    }
+    return true;
+  }
 }
