@@ -35,8 +35,8 @@ public class ArrayMethods {
     return index;
   }
   public static int[] allColSums(int[][] ary) {
-    int[] queen = new int[ary.length];
-    for(int i = 0; i < ary.length; i = i + 1) {
+    int[] queen = new int[greatestIndex(ary)];
+    for(int i = 0; i < greatestIndex(ary); i = i + 1) {
       queen[i] = columnSum(ary, i);
     }
     return queen;
