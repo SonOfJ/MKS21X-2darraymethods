@@ -28,16 +28,19 @@ public class ArrayMethods {
     }
     return king;
   }
-  public static int[] allColSums(int[][] ary) {
+  public static int colLength(int[][] ary) {
     int colLength = 0;
     for(int i = 0; i < ary.length; i = i + 1) {
       if (ary[i].length > colLength) {
         colLength = ary[i].length;
       }
     }
-    int[] queen = new int[colLength];
-    for(int i = 0; i < colLength; i = i + 1) {
-      if (ary[i].length < colLength) {
+    return colLength;
+  }
+  public static int[] allColSums(int[][] ary) {
+    int[] queen = new int[colLength(ary)];
+    for(int i = 0; i < colLength(ary); i = i + 1) {
+      if (ary[i].length < colLength(ary)) {
       }
       queen[i] = columnSum(ary, i);
     }
